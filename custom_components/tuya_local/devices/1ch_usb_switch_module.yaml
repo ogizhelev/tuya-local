@@ -1,0 +1,61 @@
+name: 1CH USB switch module
+products:
+  - id: tj4ripw7ufzqh50f
+    name: 1CH WiFi USB Switch Module
+entities:
+  - entity: switch
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+  - entity: time
+    translation_key: timer
+    category: config
+    dps:
+      - id: 7
+        name: second
+        type: integer
+        range:
+          min: 0
+          max: 86400
+  - entity: select
+    translation_key: initial_state
+    category: config
+    dps:
+      - id: 14
+        type: string
+        name: option
+        mapping:
+          - dps_val: power_off
+            value: "off"
+          - dps_val: power_on
+            value: "on"
+          - dps_val: last
+            value: memory
+  - entity: text
+    name: Cycle schedule
+    category: config
+    hidden: true
+    dps:
+      - id: 17
+        name: value
+        type: base64
+        optional: true
+  - entity: text
+    name: Random schedule
+    category: config
+    hidden: true
+    dps:
+      - id: 18
+        name: value
+        type: base64
+        optional: true
+  - entity: text
+    name: Inching config
+    category: config
+    hidden: true
+    dps:
+      - id: 19
+        name: value
+        type: base64
+        optional: true
